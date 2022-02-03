@@ -11,7 +11,10 @@ public class characterMove : MonoBehaviour
     private CharacterController controller;
 
     private Rigidbody physicsBody = null;
-    
+
+    Interactable interactableObject;
+
+    public HUD hud;
 
     private Vector3 moveDirection;
     public float gravity = 5;
@@ -22,26 +25,16 @@ public class characterMove : MonoBehaviour
         physicsBody = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
     }
-    /*
-    private void Update()
+
+    void Update()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
-
-        if (controller.isGrounded)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                moveDirection.y = jump;
-            }
-        }
-
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravity* Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
+        handleInputs();
+        Move();
+        
     }
-    */
-     void Update()
-{
 
+    private void Move()
+    {
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, moveDirection.y, Input.GetAxis("Vertical") * speed);
         // Apply direction to controller
 
@@ -62,8 +55,33 @@ public class characterMove : MonoBehaviour
             moveDirection.y = moveDirection.y + (Physics.gravity.y * gravity * Time.deltaTime);
         }
 
-    controller.Move(moveDirection * Time.deltaTime);
+        controller.Move(moveDirection * Time.deltaTime);
+    }
 
-    //Debug.Log(moveDirection.y);
-}
+    private void OnTriggerEnter(Collider other)
+    {
+        Interactable interactable = other.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactableObject = interactable;
+            hud.OpenMessagePanel(other.transform.position);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Interactable interactable = other.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            hud.CloseMessagePanel();
+            interactableObject = null;
+        }
+    }
+
+    void handleInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && interactableObject != null)
+        {
+            interactableObject.OnInteract();
+        }
+    }
 }
