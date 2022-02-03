@@ -23,6 +23,7 @@ public class FlyingShuttle : MonoBehaviour
     {
         GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation);
         newBullet.GetComponent<Rigidbody>().velocity = this.transform.forward * bulletSpeed;
+        Object.Destroy(newBullet, 4.0f);
         canShoot = false;
         float delay = Random.Range(minDelay, maxDelay);
         yield return new WaitForSeconds(delay);
