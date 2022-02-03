@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Mario/Scenes/Intro.unity
+    guid: 0b95d03e11839c74283d0b0f69747242
+  - enabled: 1
+    path: Assets/Mario/Scenes/MarioScene.unity
+    guid: 500e192888c76f04d814d829c3ec25c0
   m_configObjects: {}
