@@ -22,6 +22,7 @@ public class FlyingShuttle : MonoBehaviour
     IEnumerator Shoot()
     {
         GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation);
+        newBullet.transform.Rotate(new Vector3(0, -90, 0));
         newBullet.GetComponent<Rigidbody>().velocity = this.transform.forward * bulletSpeed;
         Object.Destroy(newBullet, 4.0f);
         canShoot = false;
