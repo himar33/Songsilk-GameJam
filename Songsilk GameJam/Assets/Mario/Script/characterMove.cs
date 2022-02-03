@@ -24,6 +24,16 @@ public class characterMove : MonoBehaviour
     private bool upDown;
     private bool canUpDown;
 
+    [Header("Spawn Manager")]
+    public Transform[] spawns;
+    public Collider[] EndLevels;
+    private Transform newPos;
+
+    public enum State
+    {
+        MOVE, UP, TP
+    }
+    private State state;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,36 +43,51 @@ public class characterMove : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+
+
     void Update()
     {
         handleInputs();
 
-        switch (upDown)
+
+        switch (state)
         {
-            case false:
+            case State.MOVE:
+
                 Move();
-                
                 break;
 
-            case true:
+            case State.UP:
 
                 moveDirection = new Vector3(0, Input.GetAxis("Horizontal") * speed,0);
                 controller.Move(moveDirection * Time.deltaTime);
-
                 break;
+
+            case State.TP:
+                gameObject.SetActive(false);
+                gameObject.transform.position = newPos.position;
+                gameObject.SetActive(true);
+                state = State.MOVE;
+                break;
+
             default:
                 break;
         }
 
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+        }
+
         if (canUpDown){
-            if (upDown){
+            if (state == State.UP){
                 if (Input.GetKeyDown(KeyCode.E)){
-                    upDown = false;
+                    state = State.MOVE;
                 }
                 return;
             }else{
                 if (Input.GetKeyDown(KeyCode.E)){
-                    upDown = true;
+                    state = State.UP;
                 }
                 return;
             }
@@ -110,6 +135,17 @@ public class characterMove : MonoBehaviour
             interactableObject = interactable;
             hud.OpenMessagePanel(other.transform.position);
         }
+
+        int spawnIndex = 0;
+        for (int i = 0; i < EndLevels.Length; i++)
+        {
+            spawnIndex++;
+            if (other == EndLevels[i])
+            {
+                newPos = spawns[spawnIndex];
+                state = State.TP;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -122,8 +158,8 @@ public class characterMove : MonoBehaviour
         }
         if (other.CompareTag("Ladder"))
         {
-             upDown = false;
-             canUpDown = false;
+            state = State.MOVE;
+            canUpDown = false;
         }
     }
 
