@@ -5,6 +5,7 @@ using UnityEngine;
 public class HUD : MonoBehaviour
 {
     public GameObject hudText;
+
     public void OpenMessagePanel(Vector3 position)
     {
         position.y += 3;

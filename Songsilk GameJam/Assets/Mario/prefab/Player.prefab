@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3477772736325154016}
   - component: {fileID: 3477772736325154017}
   - component: {fileID: 3477772736325154018}
-  - component: {fileID: 3477772736325154019}
   - component: {fileID: 3477772736325154023}
   - component: {fileID: 3477772736325154022}
   - component: {fileID: 3477772736325154021}
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3477772736325154019
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3477772736325154028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3477772736325154023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,10 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e357dd4222352f478022bda57c71ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
   speed: 10
   jump: 15
-  hud: {fileID: 0}
   gravity: 5
+  ladderSpeed: 10
+  UpDown: 0
 --- !u!143 &3477772736325154022
 CharacterController:
   m_ObjectHideFlags: 0
@@ -132,7 +119,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!54 &3477772736325154021
 Rigidbody:
   m_ObjectHideFlags: 0
