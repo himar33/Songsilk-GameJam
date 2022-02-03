@@ -70,7 +70,4 @@ Thumbs.db.meta
 
 # VS Code
 *.vscode
-Songsilk GameJam/Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Songsilk GameJam/Logs/shadercompiler-AssetImportWorker0.log
-Songsilk GameJam/Logs/AssetImportWorker0.log
-Songsilk GameJam/Logs/AssetImportWorker0-prev.log
+*.log
