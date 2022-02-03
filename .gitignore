@@ -1,13 +1,13 @@
 # Modified from:
 #     https://github.com/github/gitignore/blob/master/Unity.gitignore
 
-Library/
+[Ll]ibrary/
 /[Uu]serSettings/
-Temp/
-/[Oo]bj/
+[Tt]emp/
+[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-Logs/
+/[Ll]ogs/*
 /[Mm]emoryCaptures/
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
@@ -47,10 +47,19 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
+*.app
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Windows
 Thumbs.db
@@ -61,3 +70,7 @@ Thumbs.db.meta
 
 # VS Code
 *.vscode
+Songsilk GameJam/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+Songsilk GameJam/Logs/shadercompiler-AssetImportWorker0.log
+Songsilk GameJam/Logs/AssetImportWorker0.log
+Songsilk GameJam/Logs/AssetImportWorker0-prev.log
