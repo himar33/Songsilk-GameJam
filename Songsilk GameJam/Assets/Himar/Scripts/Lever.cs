@@ -26,6 +26,7 @@ public class Lever : Interactable
         {
             if (ladder.transform.position == initialPos)
             {
+                GetComponent<AudioSource>().Play();
                 anim.SetTrigger("Down");
                 StartCoroutine(SmoothTranlation(downPos, animSpeed));
             }
@@ -34,6 +35,7 @@ public class Lever : Interactable
         {
             if (ladder.transform.position == downPos)
             {
+                GetComponent<AudioSource>().Play();
                 anim.SetTrigger("Up");
                 StartCoroutine(SmoothTranlation(initialPos, animSpeed));
             }
