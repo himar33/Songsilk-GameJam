@@ -6,6 +6,8 @@ public class FootSteps : MonoBehaviour
 {
     [SerializeField]
     private AudioClip[] clips;
+    [SerializeField]
+    private AudioClip[] metalClips;
     private AudioSource audioSource;
 
     private void Awake()
@@ -15,12 +17,21 @@ public class FootSteps : MonoBehaviour
 
     private void Step()
     {
-        AudioClip clip = GetRandomClip();
+        if (GetComponent<Animator>().GetFloat("Speed") > 0.1f)
+        {
+            AudioClip clip = GetRandomClip(clips);
+            audioSource.PlayOneShot(clip);
+        }
+    }
+
+    private void MetalStep()
+    {
+        AudioClip clip = GetRandomClip(metalClips);
         audioSource.PlayOneShot(clip);
     }
 
-    private AudioClip GetRandomClip()
+    private AudioClip GetRandomClip(AudioClip[] clipList)
     {
-        return clips[UnityEngine.Random.Range(0, clips.Length)];
+        return clipList[UnityEngine.Random.Range(0, clipList.Length)];
     }
 }

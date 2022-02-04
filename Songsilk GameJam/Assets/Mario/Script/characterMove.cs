@@ -21,7 +21,6 @@ public class characterMove : MonoBehaviour
 
     private Vector3 moveDirection;
 
-    private bool upDown;
     private bool canUpDown;
 
     [Header("Spawn Manager")]
@@ -44,7 +43,6 @@ public class characterMove : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        upDown = false;
         canUpDown = false;
         physicsBody = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
@@ -68,6 +66,7 @@ public class characterMove : MonoBehaviour
 
                 moveDirection = new Vector3(0, Input.GetAxis("Horizontal") * speed,0);
                 controller.Move(moveDirection * Time.deltaTime);
+                animator.SetFloat("SpeedY", Input.GetAxis("Horizontal"), 0.05f, Time.deltaTime);
                 break;
 
             case State.TP:
@@ -90,11 +89,14 @@ public class characterMove : MonoBehaviour
             if (state == State.UP){
                 if (Input.GetKeyDown(KeyCode.E)){
                     state = State.MOVE;
+                    animator.SetBool("IsClimbing", false);
                 }
                 return;
             }else{
                 if (Input.GetKeyDown(KeyCode.E)){
                     state = State.UP;
+                    animator.SetBool("IsClimbing", true);
+                    transform.Rotate(transform.forward);
                 }
                 return;
             }
@@ -178,6 +180,7 @@ public class characterMove : MonoBehaviour
         if (other.CompareTag("Ladder"))
         {
             state = State.MOVE;
+            animator.SetBool("IsClimbing", false);
             canUpDown = false;
         }
     }

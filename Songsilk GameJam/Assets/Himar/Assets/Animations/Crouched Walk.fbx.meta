@@ -42,7 +42,7 @@ ModelImporter:
       lastFrame: 31
       wrapMode: 0
       orientationOffsetY: -35
-      level: 0
+      level: 0.1
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -62,7 +62,7 @@ ModelImporter:
       - time: 0.19655985
         functionName: Step
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 4874954579149902562, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
