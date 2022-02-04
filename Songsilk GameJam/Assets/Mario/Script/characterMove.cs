@@ -29,6 +29,8 @@ public class characterMove : MonoBehaviour
     public Collider[] EndLevels;
     private Transform newPos;
 
+    Animator animator;
+
     public enum State
     {
         MOVE, UP, TP
@@ -37,6 +39,7 @@ public class characterMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         upDown = false;
         canUpDown = false;
         physicsBody = GetComponent<Rigidbody>();
@@ -99,24 +102,33 @@ public class characterMove : MonoBehaviour
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, moveDirection.y, Input.GetAxis("Vertical") * speed);
         // Apply direction to controller
 
+        //Set controller rotation
+        Vector3 movement = new Vector3(moveDirection.x, 0.0f, moveDirection.z);
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
+        }
+
         if (controller.isGrounded)
         {
             moveDirection.y = -1; //Ensures contact with the ground
-
             // Jump
             if (Input.GetButtonDown("Jump"))
             {
                 moveDirection.y = jump;
             }
-
         }
         else
         {
             // Apply Gravity
             moveDirection.y = moveDirection.y + (Physics.gravity.y * gravity * Time.deltaTime);
         }
-
+        
         controller.Move(moveDirection * Time.deltaTime);
+
+        //Set Animator values
+        float velocity = Vector3.Dot(movement.normalized, transform.forward);
+        animator.SetFloat("Speed", velocity, 0.1f, Time.deltaTime);
     }
 
     private void OnTriggerStay(Collider other)

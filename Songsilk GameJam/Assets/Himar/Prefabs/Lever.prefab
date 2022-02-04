@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8728461392362157328}
   - component: {fileID: 8787333545057329715}
   - component: {fileID: 5650892128713167098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7d222504e711d014bbc06432ace915e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7078720915400751798}
   - component: {fileID: 8394273420856760514}
   - component: {fileID: 6770463963209553496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d1f8409f0bd036b4183b6b598b7fe860, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 3659024549839429064}
   - component: {fileID: 3659024549839429065}
   - component: {fileID: 3659024549839429066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,6 +232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ladder: {fileID: 0}
+  fallSize: 4
+  animSpeed: 6
+  initialPos: {x: 0, y: 0, z: 0}
+  downPos: {x: 0, y: 0, z: 0}
 --- !u!136 &3659024549839429065
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -270,7 +274,7 @@ GameObject:
   - component: {fileID: 5317950200137807457}
   - component: {fileID: 6168318223863714274}
   - component: {fileID: 7614058852787308029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 37e1de4b65a1f2f4b836d7e95b6d2b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -351,7 +355,7 @@ GameObject:
   - component: {fileID: 8939265772037679380}
   - component: {fileID: 6747114302434787992}
   - component: {fileID: 4596383302966552553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +403,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 37e1de4b65a1f2f4b836d7e95b6d2b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
