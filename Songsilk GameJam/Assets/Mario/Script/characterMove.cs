@@ -30,6 +30,9 @@ public class characterMove : MonoBehaviour
     private Transform newPos;
 
     Animator animator;
+    [SerializeField]
+    private AudioClip[] jumpClips;
+    private AudioSource audioSource;
 
     public enum State
     {
@@ -39,6 +42,7 @@ public class characterMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         upDown = false;
         canUpDown = false;
@@ -102,19 +106,14 @@ public class characterMove : MonoBehaviour
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, moveDirection.y, Input.GetAxis("Vertical") * speed);
         // Apply direction to controller
 
-        //Set controller rotation
-        Vector3 movement = new Vector3(moveDirection.x, 0.0f, moveDirection.z);
-        if (movement != Vector3.zero)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
-        }
-
         if (controller.isGrounded)
         {
+            animator.SetBool("Jump", false);
             moveDirection.y = -1; //Ensures contact with the ground
             // Jump
             if (Input.GetButtonDown("Jump"))
             {
+                //JumpSound();
                 moveDirection.y = jump;
             }
         }
@@ -122,9 +121,17 @@ public class characterMove : MonoBehaviour
         {
             // Apply Gravity
             moveDirection.y = moveDirection.y + (Physics.gravity.y * gravity * Time.deltaTime);
+            animator.SetBool("Jump", true);
         }
         
         controller.Move(moveDirection * Time.deltaTime);
+
+        //Set controller rotation
+        Vector3 movement = new Vector3(moveDirection.x, 0.0f, moveDirection.z);
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
+        }
 
         //Set Animator values
         float velocity = Vector3.Dot(movement.normalized, transform.forward);
@@ -181,5 +188,18 @@ public class characterMove : MonoBehaviour
         {
             interactableObject.OnInteract();
         }
+    }
+
+    private void JumpSound()
+    {
+        AudioClip clip = GetRandomClip();
+        audioSource.volume = 0.2f;
+        audioSource.PlayOneShot(clip);
+        audioSource.volume = 1.0f;
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        return jumpClips[UnityEngine.Random.Range(0, jumpClips.Length)];
     }
 }
