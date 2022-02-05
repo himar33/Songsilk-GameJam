@@ -6010,7 +6010,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 347915320}
   offset: {x: 0, y: 4.74, z: -7.18}
-  angle: 0
   smooth: 0.015
 --- !u!114 &1499437607
 MonoBehaviour:
