@@ -3,7 +3,107 @@ guid: 78db588dccb3a7c4c8500e6852282dea
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_ladder_m_packmod_2_m_ladder_bot1Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_ladder_m_packmod_2_m_ladder_topMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_ladder_mid_m_ladder_m_packmod_2Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_base_m_palancaMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_escaleraMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_lantern2Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_palanca_bolaMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_palanca_tuboMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_tejadoMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_telar_m_hilo_m_lanzaderaMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_m_telar_m_lanzadera_m_piezaMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_polySurface4_telar_m_telarMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface11Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface12Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface13Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface14Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface15Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface21Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_packmod_2_telar_m_telar_polySurface22Mat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: textureEditorIsolateSelectSet_m_packmod_2_m_telar_m_hilo_m_lanzaderaMat
+    second: {fileID: 2100000, guid: 883e72bfd1be26943b748934ea946f08, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
