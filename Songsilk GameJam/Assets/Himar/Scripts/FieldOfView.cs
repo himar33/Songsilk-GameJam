@@ -46,6 +46,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     if (target.gameObject.GetComponent<characterMove>().state == characterMove.State.MOVE)
                     {
+                        GetComponent<Animator>().speed = 0f;
                         visibleTargets = target;
                         visibleTargets.gameObject.GetComponent<characterMove>().state = characterMove.State.DEAD;
                         aSource.Play();
