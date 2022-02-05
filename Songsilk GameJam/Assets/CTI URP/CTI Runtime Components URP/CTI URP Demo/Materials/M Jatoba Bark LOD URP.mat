@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M Conifer Bark Array BODT
-  m_Shader: {fileID: 4800000, guid: 00baf766089b44ee3b05e340b19c821c, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP
-  m_LightmapFlags: 4
+  m_Name: M Jatoba Bark LOD URP
+  m_Shader: {fileID: 4800000, guid: 8a891dcd5cbbbc04788f800d4370c2d9, type: 3}
+  m_ShaderKeywords: _NORMALMAP
+  m_LightmapFlags: 5
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -19,19 +19,35 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 00fcb00a7e47cca4abe9ce1bef37821b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpOcclusionMap:
+        m_Texture: {fileID: 2800000, guid: a407a6560c40cc84d9a62ce3eaf85cae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpSpecAOMap:
-        m_Texture: {fileID: 2800000, guid: cc724252428df448db5a10316678900b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpSpecAOMapArray:
-        m_Texture: {fileID: 18700000, guid: 14f4181ca612e43c9b344f073e03a7c6, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpSpecMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpTransSpecMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -48,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMapX:
-        m_Texture: {fileID: 2800000, guid: 37fe0b5bbca93450593b8790186bf777, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -56,11 +72,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d7e1060759db04260bbeb12bc11664bd, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexArray:
-        m_Texture: {fileID: 18700000, guid: 41ebf0d05b0ec4283bcbbbc656c82aec, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -80,51 +96,40 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BranchWind: 0
+    - _ApplyNormal: 1
+    - _BranchBending: 0
     - _BumpScale: 1
-    - _ColorContrast: 1
-    - _ColorMultiplier: 1
-    - _Cutoff: 0
-    - _DebugBending: 0
-    - _DebugMode: 4
+    - _Cutoff: 0.5
     - _DetailMode: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeFlutterInfluence: 0.25
-    - _EnableAdvancedEdgeBending: 0
-    - _EnableLeafTurbulence: 0
+    - _EmissionScaleUI: 0
     - _FadeOutWind: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlossyReflections: 1
     - _IsBark: 1
-    - _LODTerrain: 1
-    - _LeafTumbling: 0
-    - _LeafTurbulence: 0.2
-    - _MainWind: 0
+    - _LODTerrain: 0
+    - _LeafTurbulence: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NormalLerp: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
+    - _Smoothness: 1
+    - _SquashAmount: 1
     - _SrcBlend: 1
     - _SwapUVS: 0
-    - _Tangents: 0
-    - _TimeOffset: 0.25
     - _TranslucencyStrength: 0.5
-    - _TumbleFrequency: 1
-    - _TumbleStrength: 0.1
     - _UVSec: 0
-    - _UseArrays: 1
+    - _UseArrays: 0
     - _UseDetails: 0
     - _ZWrite: 1
     m_Colors:
-    - _AdvancedEdgeBending: {r: 0.1, g: 5, b: 0, a: 0}
     - _AverageCol: {r: 1, g: 1, b: 1, a: 0.5}
-    - _BaseWindMultipliers: {r: 0.6, g: 1, b: 1, a: 0}
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseWindMultipliers: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0.83823526, g: 0.4955818, b: 0.0184905, a: 0.15686275}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HueVariation: {r: 0, g: 0.9, b: 0.8255172, a: 0.1}
-  m_BuildTextureStacks: []
+    - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+    - _HueVariation: {r: 0.9, g: 0.5, b: 0, a: 0.101960786}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}

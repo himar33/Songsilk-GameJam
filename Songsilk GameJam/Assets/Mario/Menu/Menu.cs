@@ -9,11 +9,13 @@ public class Menu : MonoBehaviour
 
     /*public GameObject[] buttons;
     private GameObject lastSelected;*/
+    private AudioSource aSource;
+    public AudioSource bgMusic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        aSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,8 @@ public class Menu : MonoBehaviour
 
     public void LoadGame()
     {
+        StartCoroutine(AudioFadeOut.FadeOut(bgMusic, 0.01f));
+        aSource.Play();
         SceneManager.LoadSceneAsync(1);
     }
 
