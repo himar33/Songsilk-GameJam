@@ -5,13 +5,10 @@ using UnityEngine;
 public class ObstaclePush : MonoBehaviour
 {
     [SerializeField] private float foreceMagnitude;
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody rigidbody = hit.collider.attachedRigidbody;
-
-        RaycastHit rHit;
-
-        Physics.Raycast(transform.position, Vector3.down, out rHit);
 
         if (rigidbody != null)
         {
@@ -19,7 +16,7 @@ public class ObstaclePush : MonoBehaviour
             forceDir.y = 0;
             forceDir.Normalize();
 
-            if (rHit.collider.tag != rigidbody.gameObject.tag)
+            if (hit.gameObject.transform.position.y > gameObject.transform.position.y)
             {
                 rigidbody.AddForce(forceDir * foreceMagnitude, ForceMode.Impulse);
             }

@@ -30,7 +30,6 @@ public class CameraMovement : MonoBehaviour
                 transform.position = movement;
                 break;
             case characterMove.State.TP:
-                Debug.Log("AAAAAAAAAAAAAAAAAAAAAAA");
                 gameObject.SetActive(false);
                 transform.position = player.gameObject.GetComponent<characterMove>().GetSpawnPos().position;
                 gameObject.SetActive(true);
