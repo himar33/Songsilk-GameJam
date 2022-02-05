@@ -67,6 +67,14 @@ public class characterMove : MonoBehaviour
                 moveDirection = new Vector3(0, Input.GetAxis("Horizontal") * speed,0);
                 controller.Move(moveDirection * Time.deltaTime);
                 animator.SetFloat("SpeedY", Input.GetAxis("Horizontal"), 0.05f, Time.deltaTime);
+                if (Input.GetAxis("Horizontal") < 0.1 && Input.GetAxis("Horizontal") > -0.1)
+                {
+                    animator.speed = 0f;
+                }
+                else
+                {
+                    animator.speed = 1f;
+                }
                 break;
 
             case State.TP:
