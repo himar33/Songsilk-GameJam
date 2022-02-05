@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b74c066db708145b3219b014b35f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantiateAcumulator: {fileID: 0}
   bullet: {fileID: 4285664729687258992, guid: 7a5ffb267ff37e84f9416e371b926f12, type: 3}
   bulletPosition: {fileID: 2919715577775727812}
   bulletSpeed: 30
