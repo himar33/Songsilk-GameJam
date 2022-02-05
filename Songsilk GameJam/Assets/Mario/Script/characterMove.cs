@@ -61,6 +61,7 @@ public class characterMove : MonoBehaviour
         {
             state = State.TP;
             animator.SetBool("isDead", false);
+            enemy.gameObject.GetComponent<Animator>().speed = 1f;
         }
 
         switch (state)
