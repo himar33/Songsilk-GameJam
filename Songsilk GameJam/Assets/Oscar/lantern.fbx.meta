@@ -1,22 +1,14 @@
 fileFormatVersion: 2
-guid: 46acb290b0f6898498de2188e76b7209
+guid: 463d51e39f7798042abc3f5962e65038
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: -88723805440604879
-    second: Cylinder|CylinderAction
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: 3950d36cb9992604aa0265a741356395, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TelarMat
-    second: {fileID: 2100000, guid: 97c3b3b3f8b9fb74092bc537d8084e62, type: 2}
+      name: LanternMat
+    second: {fileID: 2100000, guid: 10a2ce383bdb8f54c9c49c1e94c6510f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
