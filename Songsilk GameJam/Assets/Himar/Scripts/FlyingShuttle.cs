@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlyingShuttle : MonoBehaviour
 {
+    public Transform instantiateAcumulator;
     public GameObject bullet;
     public Transform bulletPosition;
     public float bulletSpeed;
@@ -21,7 +22,7 @@ public class FlyingShuttle : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation);
+        GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation,instantiateAcumulator);
         GetComponent<AudioSource>().Play();
         newBullet.transform.Rotate(new Vector3(0, -90, 0));
         newBullet.GetComponent<Rigidbody>().velocity = this.transform.forward * bulletSpeed;
