@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class characterMove : MonoBehaviour
 {
+    
     public HUD hud;
     [Header("Variables player")]
     public float speed = 10f;
@@ -55,7 +56,7 @@ public class characterMove : MonoBehaviour
     void Update()
     {
         handleInputs();
-
+        
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0) && animator.GetCurrentAnimatorStateInfo(0).IsName("Terrified"))
         {
             state = State.TP;
@@ -71,10 +72,10 @@ public class characterMove : MonoBehaviour
 
             case State.UP:
 
-                moveDirection = new Vector3(0, Input.GetAxis("Horizontal") * speed,0);
+                moveDirection = new Vector3(0, Input.GetAxis("Vertical") * speed,0);
                 controller.Move(moveDirection * Time.deltaTime);
-                animator.SetFloat("SpeedY", Input.GetAxis("Horizontal"), 0.05f, Time.deltaTime);
-                if (Input.GetAxis("Horizontal") < 0.1 && Input.GetAxis("Horizontal") > -0.1)
+                animator.SetFloat("SpeedY", Input.GetAxis("Vertical"), 0.05f, Time.deltaTime);
+                if (Input.GetAxis("Vertical") < 0.1 && Input.GetAxis("Vertical") > -0.1)
                     animator.speed = 0f;
                 else
                     animator.speed = 1f;
@@ -98,13 +99,15 @@ public class characterMove : MonoBehaviour
 
         if (canUpDown){
             if (state == State.UP){
-                if (Input.GetKeyDown(KeyCode.E)){
+                if (Input.GetButtonDown("Interact"))
+                {
                     state = State.MOVE;
                     animator.SetBool("IsClimbing", false);
                 }
                 return;
             }else{
-                if (Input.GetKeyDown(KeyCode.E)){
+                if (Input.GetButtonDown("Interact"))
+                {
                     state = State.UP;
                     animator.SetBool("IsClimbing", true);
                     transform.Rotate(transform.forward);
@@ -199,7 +202,7 @@ public class characterMove : MonoBehaviour
 
     void handleInputs()
     {
-        if (Input.GetKeyDown(KeyCode.E) && interactableObject != null)
+        if (Input.GetButtonDown("Interact") && interactableObject != null)
         {
             interactableObject.OnInteract();
         }
