@@ -7,6 +7,7 @@ public class FlyingShuttle : MonoBehaviour
     public Transform instantiateAcumulator;
     public GameObject bullet;
     public Transform bulletPosition;
+    public AudioSource aSource;
     public float bulletSpeed;
     public float minDelay;
     public float maxDelay;
@@ -23,9 +24,9 @@ public class FlyingShuttle : MonoBehaviour
     IEnumerator Shoot()
     {
         GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation,instantiateAcumulator);
-        GetComponent<AudioSource>().Play();
-        newBullet.transform.Rotate(new Vector3(0, -90, 0));
-        newBullet.GetComponent<Rigidbody>().velocity = this.transform.forward * bulletSpeed;
+        aSource.Play();
+        newBullet.transform.Rotate(new Vector3(0, 0, 0));
+        newBullet.GetComponent<Rigidbody>().velocity = (-this.transform.right) * bulletSpeed;
         Object.Destroy(newBullet, 4.0f);
         canShoot = false;
         float delay = Random.Range(minDelay, maxDelay);
