@@ -29,6 +29,7 @@ public class characterMove : MonoBehaviour
     private Transform newPos;
 
     Animator animator;
+    [Header("Animator")]
     [SerializeField]
     private AudioClip[] jumpClips;
     private AudioSource audioSource;
@@ -37,7 +38,8 @@ public class characterMove : MonoBehaviour
     {
         MOVE, UP, TP
     }
-    private State state;
+    public State state;
+       
     // Start is called before the first frame update
     void Start()
     {
@@ -47,9 +49,7 @@ public class characterMove : MonoBehaviour
         physicsBody = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
     }
-
-
-
+    
     void Update()
     {
         handleInputs();
@@ -73,7 +73,6 @@ public class characterMove : MonoBehaviour
                 gameObject.SetActive(false);
                 gameObject.transform.position = newPos.position;
                 gameObject.SetActive(true);
-                state = State.MOVE;
                 break;
 
             default:
@@ -204,5 +203,10 @@ public class characterMove : MonoBehaviour
     private AudioClip GetRandomClip()
     {
         return jumpClips[UnityEngine.Random.Range(0, jumpClips.Length)];
+    }
+   
+    public Transform GetSpawnPos()
+    {
+        return newPos;
     }
 }
