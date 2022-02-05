@@ -671,22 +671,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 235468926206607669, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
-      propertyPath: metalClips.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 235468926206607669, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
-      propertyPath: metalClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 082796528f225dc4b8967a935b3ab109, type: 3}
-    - target: {fileID: 235468926206607669, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
-      propertyPath: metalClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1782474563103124c8b522c633c8bf46, type: 3}
-    - target: {fileID: 235468926206607669, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
-      propertyPath: metalClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a59cfdff2242c54e9eb43d696c3470c, type: 3}
     - target: {fileID: 4874954579149902561, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
       propertyPath: hud
       value: 
@@ -748,10 +732,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1622239496065692940, guid: d1067af36d668ad46a151c63c8e15509, type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1622239496065692941, guid: d1067af36d668ad46a151c63c8e15509, type: 3}
       propertyPath: m_Name
       value: EnemyTest

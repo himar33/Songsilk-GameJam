@@ -17,7 +17,7 @@ public class characterMove : MonoBehaviour
     private Rigidbody physicsBody = null;
 
     Interactable interactableObject;
-
+    public Animator animator;
 
     private Vector3 moveDirection;
 
@@ -28,21 +28,23 @@ public class characterMove : MonoBehaviour
     public Collider[] EndLevels;
     private Transform newPos;
 
-    Animator animator;
     [Header("Animator")]
     [SerializeField]
     private AudioClip[] jumpClips;
     private AudioSource audioSource;
 
+    public FieldOfView enemy;
+    
     public enum State
     {
-        MOVE, UP, TP
+        MOVE, UP, TP, DEAD
     }
     public State state;
        
     // Start is called before the first frame update
     void Start()
     {
+        newPos = spawns[0];
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         canUpDown = false;
@@ -54,6 +56,11 @@ public class characterMove : MonoBehaviour
     {
         handleInputs();
 
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0) && animator.GetCurrentAnimatorStateInfo(0).IsName("Terrified"))
+        {
+            state = State.TP;
+            animator.SetBool("isDead", false);
+        }
 
         switch (state)
         {
@@ -68,13 +75,9 @@ public class characterMove : MonoBehaviour
                 controller.Move(moveDirection * Time.deltaTime);
                 animator.SetFloat("SpeedY", Input.GetAxis("Horizontal"), 0.05f, Time.deltaTime);
                 if (Input.GetAxis("Horizontal") < 0.1 && Input.GetAxis("Horizontal") > -0.1)
-                {
                     animator.speed = 0f;
-                }
                 else
-                {
                     animator.speed = 1f;
-                }
                 break;
 
             case State.TP:
@@ -83,13 +86,14 @@ public class characterMove : MonoBehaviour
                 gameObject.SetActive(true);
                 break;
 
+            case State.DEAD:
+                transform.LookAt(enemy.transform);
+                animator.SetBool("isDead", true);
+                
+                break;
+
             default:
                 break;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
         }
 
         if (canUpDown){
@@ -108,6 +112,7 @@ public class characterMove : MonoBehaviour
                 return;
             }
         }
+
     }
 
     private void Move()

@@ -12,7 +12,8 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public Transform visibleTargets;
+    public AudioSource aSource;
 
     void Start()
     {
@@ -30,9 +31,9 @@ public class FieldOfView : MonoBehaviour
 
     void FindVisibleTargets()
     {
-        visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
+        visibleTargets = null;
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
@@ -43,7 +44,12 @@ public class FieldOfView : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(target);
+                    if (target.gameObject.GetComponent<characterMove>().state == characterMove.State.MOVE)
+                    {
+                        visibleTargets = target;
+                        visibleTargets.gameObject.GetComponent<characterMove>().state = characterMove.State.DEAD;
+                        aSource.Play();
+                    }
                 }
             }
         }
