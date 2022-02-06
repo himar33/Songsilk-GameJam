@@ -23,13 +23,13 @@ public class FlyingShuttle : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        float delay = Random.Range(minDelay, maxDelay);
         GameObject newBullet = GameObject.Instantiate(bullet, bulletPosition.transform.position, this.transform.rotation,instantiateAcumulator);
         aSource.Play();
         newBullet.transform.Rotate(new Vector3(0, 0, 0));
         newBullet.GetComponent<Rigidbody>().velocity = (-this.transform.right) * bulletSpeed;
-        Object.Destroy(newBullet, 2.0f);
+        Object.Destroy(newBullet, delay);
         canShoot = false;
-        float delay = Random.Range(minDelay, maxDelay);
         yield return new WaitForSeconds(delay);
         canShoot = true;
     }

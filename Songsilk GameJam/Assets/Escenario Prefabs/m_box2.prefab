@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3394879968624131517}
   - component: {fileID: 2281663376388008658}
   - component: {fileID: 5527288730120837144}
+  - component: {fileID: 344905932}
   m_Layer: 6
   m_Name: m_box2
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &172171724655925054
 Transform:
@@ -95,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047287963, y: 0.10520747, z: 0.047287956}
   m_Center: {x: -0.0000000018626451, y: 0.028959766, z: 9.313226e-10}
+--- !u!54 &344905932
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8625471216887596140}
+  serializedVersion: 2
+  m_Mass: 8
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

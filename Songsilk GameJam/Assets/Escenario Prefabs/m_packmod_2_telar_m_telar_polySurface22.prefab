@@ -295,8 +295,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.699726, y: 8.76, z: 7.2455864}
-  m_Center: {x: 11.98642, y: 5.17, z: -36.84906}
+  m_Size: {x: 11.699726, y: 15.62, z: 7.2455864}
+  m_Center: {x: 11.98642, y: 8.82, z: -36.84906}
 --- !u!114 &-7083495097178072248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   bullet: {fileID: 2516324042711041592, guid: 2f4fb0b845ab24c44875fdd830d26b04, type: 3}
   bulletPosition: {fileID: 1475022815}
   aSource: {fileID: 1236786205496838183}
-  bulletSpeed: 30
+  bulletSpeed: 40
   minDelay: 1
   maxDelay: 1
 --- !u!1 &4303438950618537909
