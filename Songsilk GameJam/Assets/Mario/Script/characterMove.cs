@@ -21,6 +21,7 @@ public class characterMove : MonoBehaviour
     Interactable interactableObject;
     public Animator animator;
     public AudioClip headShotClip;
+    public Material skyboxMat;
 
     private Vector3 moveDirection;
 
@@ -72,11 +73,6 @@ public class characterMove : MonoBehaviour
             state = State.TP;
             animator.SetBool("headShot", false);
         }
-
-
-        //if (Input.GetButton("Run") && lastState== State.MOVE){
-        //    state = State.RUN;
-        //}
         
 
         switch (state)
@@ -85,15 +81,21 @@ public class characterMove : MonoBehaviour
 
                 Move();
                 if (Input.GetButtonDown("Run"))
+                {
                     state = State.RUN;
+                    animator.SetBool("isRunning", true);
+                }
                 break;
 
             case State.RUN:
 
                 MoveRun();
                 if (Input.GetButtonUp("Run"))
+                {
                     state = State.MOVE;
-                
+                    animator.SetBool("isRunning", false);
+                }
+
                 break;
 
             case State.UP:
@@ -241,6 +243,10 @@ public class characterMove : MonoBehaviour
             {
                 newPos = spawns[spawnIndex];
                 state = State.TP;
+            }
+            if (i == 1)
+            {
+                RenderSettings.skybox = skyboxMat;
             }
         }
 
