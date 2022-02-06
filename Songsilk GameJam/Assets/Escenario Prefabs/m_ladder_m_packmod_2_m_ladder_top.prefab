@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7280532805524017684}
   - component: {fileID: 6841084831293005838}
   - component: {fileID: 198198648340704073}
-  - component: {fileID: 3370406858521411801}
+  - component: {fileID: -2185924168548336974}
   m_Layer: 0
   m_Name: m_ladder_m_packmod_2_m_ladder_top
   m_TagString: Untagged
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299119067887769545}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &6841084831293005838
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3370406858521411801
+--- !u!65 &-2185924168548336974
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.599063, y: 3.403654, z: 1.9853935}
-  m_Center: {x: 17.021164, y: 14.191482, z: -24.848967}
+  m_Size: {x: 2.5990636, y: 3.403654, z: 1.67}
+  m_Center: {x: 17.021168, y: 14.191482, z: -24.848972}
