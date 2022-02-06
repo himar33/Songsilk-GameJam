@@ -1598,6 +1598,7 @@ GameObject:
   - component: {fileID: 629858581316029141}
   - component: {fileID: 4874954579149902563}
   - component: {fileID: 347915321}
+  - component: {fileID: 1517778799215980731}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1661,17 +1662,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   speed: 5
-  runSpeed: 20
+  runSpeed: 10
   jump: 17
   gravity: 5
   ladderSpeed: 10
   animator: {fileID: 0}
   headShotClip: {fileID: 8300000, guid: ae8143d5642d9a04ab6525b1ba5d7d46, type: 3}
+  skyboxMat: {fileID: 0}
   spawns:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   EndLevels:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   jumpClips: []
@@ -1832,6 +1836,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &347915321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874954579149902562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c4a3076574f7e4aa3624afc103bc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foreceMagnitude: 1
+--- !u!114 &1517778799215980731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
