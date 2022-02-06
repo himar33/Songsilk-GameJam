@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     [Header("Separacion")]
     public Vector3 offset;
     public float smooth = 0.01f;
+    public float RunSmooth = 0.03f;
     private Vector3 newPos;
     
     private void LateUpdate()
@@ -24,11 +25,14 @@ public class CameraMovement : MonoBehaviour
             case characterMove.State.MOVE:
             case characterMove.State.UP:
 
-                Vector3 target = player.position + offset;
-                Vector3 movement = Vector3.Lerp(transform.position, target, smooth);
-
-                transform.position = movement;
+                CameraMove(smooth);
                 break;
+
+            case characterMove.State.RUN:
+
+                CameraMove(RunSmooth);
+                break;
+
             case characterMove.State.TP:
                 gameObject.SetActive(false);
                 transform.position = player.gameObject.GetComponent<characterMove>().GetSpawnPos().position;
@@ -42,7 +46,14 @@ public class CameraMovement : MonoBehaviour
         
 
     }
-    
+
+    public void CameraMove(float newSpeed)
+    {
+        Vector3 target = player.position + offset;
+        Vector3 movement = Vector3.Lerp(transform.position, target, newSpeed);
+
+        transform.position = movement;
+    }
     
 }
 

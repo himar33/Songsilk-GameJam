@@ -8,6 +8,7 @@ public class characterMove : MonoBehaviour
     public HUD hud;
     [Header("Variables player")]
     public float speed = 10f;
+    public float runSpeed = 20f;
     public float jump = 15f;
     public float gravity = 5;
 
@@ -36,13 +37,14 @@ public class characterMove : MonoBehaviour
     private AudioSource audioSource;
 
     public FieldOfView enemy;
-    
+
     public enum State
     {
-        MOVE, UP, TP, DEAD
+        MOVE, RUN, UP, TP, DEAD
     }
     public State state;
-       
+
+    private State lastState;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,11 +73,27 @@ public class characterMove : MonoBehaviour
             animator.SetBool("headShot", false);
         }
 
+
+        //if (Input.GetButton("Run") && lastState== State.MOVE){
+        //    state = State.RUN;
+        //}
+        
+
         switch (state)
         {
             case State.MOVE:
 
                 Move();
+                if (Input.GetButtonDown("Run"))
+                    state = State.RUN;
+                break;
+
+            case State.RUN:
+
+                MoveRun();
+                if (Input.GetButtonUp("Run"))
+                    state = State.MOVE;
+                
                 break;
 
             case State.UP:
@@ -87,9 +105,12 @@ public class characterMove : MonoBehaviour
                     animator.speed = 0f;
                 else
                     animator.speed = 1f;
+
+                lastState = State.UP;
                 break;
 
             case State.TP:
+
                 gameObject.SetActive(false);
                 gameObject.transform.position = newPos.position;
                 gameObject.SetActive(true);
@@ -122,7 +143,42 @@ public class characterMove : MonoBehaviour
         }
 
     }
+    private void MoveRun()
+    {
+        moveDirection = new Vector3(Input.GetAxis("Horizontal") * runSpeed, moveDirection.y, Input.GetAxis("Vertical") * runSpeed);
+        // Apply direction to controller
 
+        if (controller.isGrounded)
+        {
+            animator.SetBool("Jump", false);
+            moveDirection.y = -1; //Ensures contact with the ground
+            // Jump
+            if (Input.GetButtonDown("Jump"))
+            {
+                //JumpSound();
+                moveDirection.y = jump;
+            }
+        }
+        else
+        {
+            // Apply Gravity
+            moveDirection.y = moveDirection.y + (Physics.gravity.y * gravity * Time.deltaTime);
+            animator.SetBool("Jump", true);
+        }
+
+        controller.Move(moveDirection * Time.deltaTime);
+
+        //Set controller rotation
+        Vector3 movement = new Vector3(moveDirection.x, 0.0f, moveDirection.z);
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
+        }
+
+        //Set Animator values
+        float velocity = Vector3.Dot(movement.normalized, transform.forward);
+        animator.SetFloat("Speed", velocity, 0.1f, Time.deltaTime);
+    }
     private void Move()
     {
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, moveDirection.y, Input.GetAxis("Vertical") * speed);
