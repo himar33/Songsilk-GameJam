@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2765331964539906668}
   - component: {fileID: 6400343161438103462}
   - component: {fileID: 7363401110587180363}
+  - component: {fileID: 8781433620207917359}
   m_Layer: 0
   m_Name: m_packmod_2_m_tejado
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5449388489112500904}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2765331964539906668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96,3 +97,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7709005771853568802, guid: 78db588dccb3a7c4c8500e6852282dea, type: 3}
+--- !u!65 &8781433620207917359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5449388489112500904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.125952, y: 11.583031, z: 1.57}
+  m_Center: {x: 11.447485, y: 27.904484, z: 30.04}
