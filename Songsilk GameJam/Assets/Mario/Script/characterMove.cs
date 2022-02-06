@@ -80,10 +80,10 @@ public class characterMove : MonoBehaviour
 
             case State.UP:
 
-                moveDirection = new Vector3(0, Input.GetAxis("Vertical") * speed,0);
+                moveDirection = new Vector3(0, Input.GetAxis("Horizontal") * speed,0);
                 controller.Move(moveDirection * Time.deltaTime);
-                animator.SetFloat("SpeedY", Input.GetAxis("Vertical"), 0.05f, Time.deltaTime);
-                if (Input.GetAxis("Vertical") < 0.1 && Input.GetAxis("Vertical") > -0.1)
+                animator.SetFloat("SpeedY", Input.GetAxis("Horizontal"), 0.05f, Time.deltaTime);
+                if (Input.GetAxis("Horizontal") < 0.1 && Input.GetAxis("Horizontal") > -0.1)
                     animator.speed = 0f;
                 else
                     animator.speed = 1f;
