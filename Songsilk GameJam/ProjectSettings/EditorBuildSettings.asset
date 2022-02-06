@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Mario/Scenes/Intro.unity
     guid: 0b95d03e11839c74283d0b0f69747242
   - enabled: 1
-    path: Assets/Marc/Blockout.unity
-    guid: 38e14a3dac2b79946a36ff2f6bbff677
+    path: Assets/Marc/PostProcessing.unity
+    guid: 5e75d244ae292ad42a75f73ab4db81f2
   - enabled: 1
-    path: Assets/Mario/Scenes/MarioScene.unity
-    guid: 500e192888c76f04d814d829c3ec25c0
+    path: Assets/Mario/EndScene.unity
+    guid: 2150adc96c3d86b439725e4784ee1b3e
   m_configObjects: {}

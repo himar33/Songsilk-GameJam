@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class characterMove : MonoBehaviour
 {
@@ -255,6 +256,11 @@ public class characterMove : MonoBehaviour
             audioSource.PlayOneShot(headShotClip);
             state = State.DEAD;
             animator.SetBool("headShot", true);
+        }
+
+        if (other.CompareTag("End"))
+        {
+            SceneManager.LoadSceneAsync(2);
         }
     }
 
