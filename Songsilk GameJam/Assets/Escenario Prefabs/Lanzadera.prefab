@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6777012495330350378}
   - component: {fileID: 8439967529472693981}
   - component: {fileID: 7551178808592203214}
+  - component: {fileID: 1729930055881244073}
   m_Layer: 0
   m_Name: Lanzadera
-  m_TagString: Untagged
+  m_TagString: Lanzadera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,19 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &7551178808592203214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516324042711041592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.59, y: 0.36, z: -0.38}
+  m_Center: {x: -0.06, y: 0, z: 0}
+--- !u!65 &1729930055881244073
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

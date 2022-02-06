@@ -19,6 +19,7 @@ public class characterMove : MonoBehaviour
 
     Interactable interactableObject;
     public Animator animator;
+    public AudioClip headShotClip;
 
     private Vector3 moveDirection;
 
@@ -64,6 +65,12 @@ public class characterMove : MonoBehaviour
             enemy.gameObject.GetComponent<Animator>().speed = 1f;
         }
 
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0) && animator.GetCurrentAnimatorStateInfo(0).IsName("HeadShot"))
+        {
+            state = State.TP;
+            animator.SetBool("headShot", false);
+        }
+
         switch (state)
         {
             case State.MOVE:
@@ -89,9 +96,6 @@ public class characterMove : MonoBehaviour
                 break;
 
             case State.DEAD:
-                transform.LookAt(enemy.transform);
-                animator.SetBool("isDead", true);
-                
                 break;
 
             default:
@@ -182,6 +186,13 @@ public class characterMove : MonoBehaviour
                 newPos = spawns[spawnIndex];
                 state = State.TP;
             }
+        }
+
+        if (other.CompareTag("Lanzadera"))
+        {
+            audioSource.PlayOneShot(headShotClip);
+            state = State.DEAD;
+            animator.SetBool("headShot", true);
         }
     }
 

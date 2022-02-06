@@ -13122,6 +13122,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1213203651}
     - target: {fileID: 4874954579149902561, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
+      propertyPath: headShotClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ae8143d5642d9a04ab6525b1ba5d7d46, type: 3}
+    - target: {fileID: 4874954579149902561, guid: e7972adb553630c4daa02bb17bca6618, type: 3}
       propertyPath: spawns.Array.size
       value: 3
       objectReference: {fileID: 0}

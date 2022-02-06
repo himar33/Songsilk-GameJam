@@ -49,6 +49,8 @@ public class FieldOfView : MonoBehaviour
                         GetComponent<Animator>().speed = 0f;
                         visibleTargets = target;
                         visibleTargets.gameObject.GetComponent<characterMove>().state = characterMove.State.DEAD;
+                        visibleTargets.gameObject.transform.LookAt(transform);
+                        visibleTargets.gameObject.GetComponent<characterMove>().animator.SetBool("isDead", true);
                         aSource.Play();
                     }
                 }
